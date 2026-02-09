@@ -7,13 +7,10 @@
 import SwiftUI
 
 struct MainView: View {
-    @Binding var isAuthenticated: Bool
     var body: some View {
     }
 }
 
-
 #Preview {
-    MainView(isAuthenticated: .constant(true))
+    MainView()
 }
-

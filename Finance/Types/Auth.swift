@@ -1,5 +1,5 @@
 //
-//  Types.swift
+//  Auth.swift
 //  Finance
 //
 //  Created by Sebastian Valenzuela on 08-02-26.

@@ -1,0 +1,8 @@
+//
+//  Config.xcconfig
+//  Finance
+//
+//  Created by Sebastian Valenzuela on 09-02-26.
+//
+
+BASE_URL = https:/$()/finance-api.sebitay.cl

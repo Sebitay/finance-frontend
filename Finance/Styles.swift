@@ -10,17 +10,34 @@ import SwiftUI
 struct StandardInputStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .textFieldStyle(.roundedBorder)
+            .padding()
+            .background(Color.gray.opacity(0.3))
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
             .padding(.horizontal)
-            .autocorrectionDisabled()
-            .textInputAutocapitalization(.never)
+            
     }
 }
 
-// Opcional: Una forma más sencilla de aplicar el modificador
-// Esto crea un método de extensión en `View` que puedes usar directamente.
 extension View {
     func standardInputStyle() -> some View {
         self.modifier(StandardInputStyle())
     }
+}
+
+struct PrimaryButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(Color.blue)
+            .foregroundStyle(.white)
+            .opacity(configuration.isPressed ? 0.8 : 1.0)
+            .cornerRadius(12)
+            .padding(.horizontal)
+            
+        }
 }
