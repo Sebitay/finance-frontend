@@ -13,6 +13,8 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
+            Color("BackgroundColor").ignoresSafeArea()
+            
             switch authViewModel.currentState {
             case .checking:
                 ProgressView("Loading...")

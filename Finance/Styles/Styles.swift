@@ -12,12 +12,11 @@ struct StandardInputStyle: ViewModifier {
         content
             .padding()
             .background(Color.gray.opacity(0.3))
-            .cornerRadius(10)
+            .cornerRadius(15)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray, lineWidth: 1)
+                    .stroke(Color.gray, lineWidth: 0)
             )
-            .padding(.horizontal)
             
     }
 }
@@ -32,12 +31,11 @@ struct PrimaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, maxHeight: 60)
             .background(Color.blue)
             .foregroundStyle(.white)
             .opacity(configuration.isPressed ? 0.8 : 1.0)
-            .cornerRadius(12)
-            .padding(.horizontal)
+            .cornerRadius(15)
             
         }
 }

@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct FinanceApp: App {
+    init() {
+        UICollectionView.appearance().backgroundColor = .clear
+        UITableView.appearance().backgroundColor = .clear
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
