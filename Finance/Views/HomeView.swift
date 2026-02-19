@@ -89,7 +89,7 @@ struct HomeView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(accountViewModel.accounts) { account in
-                                    AccountCard(
+                                    HomeAccountCard(
                                         account: account,
                                         selectedAccount: accountViewModel.selectedAccount
                                     ).onTapGesture {

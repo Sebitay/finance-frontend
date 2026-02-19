@@ -9,27 +9,39 @@ import SwiftUI
 
 struct AccountIcon: View {
     let accountType: AccountType
+    let size: CGFloat
+    
+    init(accountType: AccountType) {
+        self.accountType = accountType
+        self.size = 22
+    }
+    
+    init(accountType: AccountType, size: CGFloat) {
+        self.accountType = accountType
+        self.size = size
+    }
+    
     var body: some View {
         switch accountType {
         case .checking:
             Image(systemName: "building.columns.fill")
-                .imageScale(.large)
+                .font(.system(size: size))
                 .foregroundColor(.blue)
         case .savings:
             Image(systemName: "leaf.fill")
-                .imageScale(.large)
+                .font(.system(size: size))
                 .foregroundColor(.green)
         case .credit:
             Image(systemName: "creditcard.fill")
-                .imageScale(.large)
+                .font(.system(size: size))
                 .foregroundColor(.purple)
         case .vista:
             Image(systemName: "person.text.rectangle.fill")
-                .imageScale(.large)
+                .font(.system(size: size))
                 .foregroundColor(.orange)
         case .main:
             Image(systemName: "wallet.bifold.fill")
-                .imageScale(.large)
+                .font(.system(size: size))
                 .foregroundColor(.yellow)
         }
     }
@@ -39,7 +51,7 @@ struct AccountIcon: View {
     ZStack {
         Color("BackgroundColor").ignoresSafeArea()
         HStack {
-            AccountIcon(accountType: .checking)
+            AccountIcon(accountType: .checking, size: 30)
             AccountIcon(accountType: .savings)
             AccountIcon(accountType: .credit)
             AccountIcon(accountType: .vista)

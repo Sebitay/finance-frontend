@@ -6,6 +6,36 @@
 //
 import Foundation
 
+//struct Card: Codable, Identifiable {
+//    var id: Int
+//    var name: String
+//    var cardNumber: String
+//    var cardType: String
+//    var expirationDate: Date
+//    var accountId: Int
+//}
+
+extension Card {
+    static let mockArray = [
+        Card(
+            id: 1,
+            name: "Debito",
+            cardNumber: "2628",
+            cardType: .debit,
+            expirationDate: Date(),
+            accountId: 1
+        ),
+        Card(
+            id: 2,
+            name: "Credito",
+            cardNumber: "8956",
+            cardType: .credit,
+            expirationDate: Date(),
+            accountId: 1
+        )
+    ]
+}
+
 extension Account {
     static let mockArray = [
         Account(
@@ -17,7 +47,7 @@ extension Account {
             balance: 143740.0,
             userId: 1,
             bank: Bank(id: 1, name: "Banco Santander"),
-            cards: []
+            cards: [Card.mockArray[0], Card.mockArray[1]]
         ),
         Account(
             id: 2,
