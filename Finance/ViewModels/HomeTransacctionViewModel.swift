@@ -49,7 +49,6 @@ class HomeTransactionViewModel {
             do {
                 try await fetchTransactions()
             } catch is CancellationError {
-                print("Refresh cancelado por el sistema/usuario.")
             } catch let error as URLError where error.code == .cancelled {
                 print("Petición de red cancelada.")
             } catch {
@@ -106,7 +105,6 @@ class HomeTransactionViewModel {
                 let body = try JSONEncoder().encode(["transaction_id": transactionId, "category_id": newCategory.id])
                 _ = try await apiService.FetchRequest(path: "/transaction/categorize", method: "POST", body: body)
                 
-                print("Categoría actualizada en backend correctamente")
                 
             } catch {
                 print("Error actualizando categoría: \(error). Revertiendo cambios.")

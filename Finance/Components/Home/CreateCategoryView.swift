@@ -29,7 +29,7 @@ struct CreateCategoryView: View {
                         .glassEffect(.regular.interactive())
                     
                     Spacer()
-                    Text("Create Category")
+                    Text("New Category")
                         .font(.title2.bold())
                     Spacer()
                     

@@ -24,6 +24,12 @@ enum ColorType: String, Codable, CaseIterable {
     case green = "green"
 }
 
+enum CardType: String, Codable, CaseIterable {
+    case credit = "credit"
+    case debit = "debit"
+    case prepaid = "prepaid"
+}
+
 struct Bank: Codable, Identifiable {
     var id: Int
     var name: String
@@ -33,7 +39,7 @@ struct Card: Codable, Identifiable {
     var id: Int
     var name: String
     var cardNumber: String
-    var cardType: String
+    var cardType: CardType
     var expirationDate: Date
     var accountId: Int
 }

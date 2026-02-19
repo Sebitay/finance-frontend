@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AccountCard: View {
+struct HomeAccountCard: View {
     let account: Account
     let selectedAccount: Int
     
@@ -38,8 +38,8 @@ struct AccountCard: View {
     ZStack {
         Color("BackgroundColor").ignoresSafeArea()
         HStack(spacing: 5) {
-            AccountCard(account: .mockArray[0], selectedAccount: 1)
-            AccountCard(account: .mockArray[1], selectedAccount: 1)
+            HomeAccountCard(account: .mockArray[0], selectedAccount: 1)
+            HomeAccountCard(account: .mockArray[1], selectedAccount: 1)
         }
     }
 }
